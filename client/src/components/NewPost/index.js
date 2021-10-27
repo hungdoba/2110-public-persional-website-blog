@@ -49,8 +49,10 @@ const NewPost = (post, { language }) => {
                     ? new Date(post.updatedAt).toLocaleDateString()
                     : "Updating..."}
             </PostTime>
-            {post && (
-                <NavPost to={`/post/${post.post._id}`}>
+            {post.post && (
+                <NavPost to={`/post/`}>
+                    {" "}
+                    {/*${post.post._id}*/}
                     {language === "ja"
                         ? "もっと見る"
                         : language === "vi"

@@ -1,10 +1,12 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { Controlled } from "react-codemirror2";
+
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 import "codemirror/mode/xml/xml";
-import { Controlled } from "react-codemirror2";
+
 import "../Editor/element.css";
-import axios from "axios";
 
 const Editor = ({ value, executeCode, dispatch, language }) => {
     function handleChange(editor, data, value) {

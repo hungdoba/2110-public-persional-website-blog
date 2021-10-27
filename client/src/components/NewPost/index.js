@@ -18,12 +18,14 @@ const NewPost = (post, { language }) => {
     };
 
     useEffect(() => {
-        if (post.post.titleImage) {
+        console.log(post);
+        /*
+        if (post) {
             setPhotoSrc(
                 "https://drive.google.com/uc?export=view&id=" +
                     post.post.titleImage
             );
-        }
+        }*/
     }, [post]);
 
     return (

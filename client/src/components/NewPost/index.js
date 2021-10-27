@@ -24,7 +24,7 @@ const NewPost = (post, { language }) => {
                     post.post.titleImage
             );
         }
-    }, [post.post.titleImage]);
+    }, [post]);
 
     return (
         <Container>

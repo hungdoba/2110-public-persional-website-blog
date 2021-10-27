@@ -43,6 +43,5 @@ if (process.env.NODE_ENV === "production") {
 }
 // End Deploy
 
-app.listen("5000", () => {
-    console.log("Backend is running.");
-});
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

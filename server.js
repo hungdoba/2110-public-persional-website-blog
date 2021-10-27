@@ -33,6 +33,10 @@ app.use("/image", image);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/client/build")));
 
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.PORT);
+    console.log(process.env.MONGO_URL);
+
     app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "client", "build", "index.html"));
     });
@@ -43,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // End Deploy
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });

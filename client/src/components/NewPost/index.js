@@ -18,14 +18,12 @@ const NewPost = (post, { language }) => {
     };
 
     useEffect(() => {
-        console.log(post);
-        /*
-        if (post) {
+        if (post && post.post.titleImage) {
             setPhotoSrc(
                 "https://drive.google.com/uc?export=view&id=" +
                     post.post.titleImage
             );
-        }*/
+        }
     }, [post]);
 
     return (
@@ -52,9 +50,7 @@ const NewPost = (post, { language }) => {
                     : "Updating..."}
             </PostTime>
             {post.post && (
-                <NavPost to={`/post/`}>
-                    {" "}
-                    {/*${post.post._id}*/}
+                <NavPost to={`/post/${post.post._id}`}>
                     {language === "ja"
                         ? "もっと見る"
                         : language === "vi"

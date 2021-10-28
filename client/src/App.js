@@ -1,9 +1,13 @@
-import "./App.css";
+import React, { Suspense } from "react";
+import Route from "react-router-dom/Route";
+import Switch from "react-router-dom/Switch";
+import HashRouter from "react-router-dom/HashRouter";
+
 import Blog from "./pages/Blog/Blog";
+
 import Post from "./pages/Post/Post";
 import Search from "./pages/Search";
 import Article from "./pages/Article";
-import { HashRouter, Switch, Route } from "react-router-dom";
 
 function App() {
     return (

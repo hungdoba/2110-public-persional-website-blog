@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import {
     Container,
     ContainerImage,
@@ -8,7 +8,7 @@ import {
     Title,
 } from "./element";
 
-import skyPhoto from "../../images/sky.jpg";
+const skyPhoto = React.lazy(() => import("../../images/sky.jpg"));
 
 const NewPost = (post, { language }) => {
     const [photoSrc, setPhotoSrc] = useState();
@@ -28,13 +28,15 @@ const NewPost = (post, { language }) => {
 
     return (
         <Container>
-            <ContainerImage>
-                <Image
-                    alt="article-title-photo"
-                    onError={setDefaultImage}
-                    src={photoSrc}
-                />
-            </ContainerImage>
+            <Suspense fullback={<div>Loading...</div>}>
+                <ContainerImage>
+                    <Image
+                        alt="article-title-photo"
+                        onError={setDefaultImage}
+                        src={photoSrc}
+                    />
+                </ContainerImage>
+            </Suspense>
             <Title>
                 {post
                     ? language === "ja"

@@ -1,9 +1,6 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 
-import Sidebar from "../Sidebar";
-import Login from "../../components/Login";
-import { Context } from "../../context/Context";
 import {
     Background,
     ResultTitle,
@@ -32,7 +29,11 @@ import SearchIcon from "../../images/search.png";
 import LogoutIcon from "../../images/logout.png";
 import ArticleIcon from "../../images/article.png";
 import ProgrammingIcon from "../../images/programming.png";
-import SearchResultUnit from "../../components/SearchResultUnit";
+import { Context } from "../../context/Context";
+
+const Sidebar = React.lazy(() => import("../Sidebar"));
+const Login = React.lazy(() => import("../../components/Login"));
+const SearchResultUnit = React.lazy("../../components/SearchResultUnit");
 
 const Navbar = ({ languageChanged }) => {
     const [en, setEn] = useState(true);
@@ -90,6 +91,7 @@ const Navbar = ({ languageChanged }) => {
                     setShowResult(true);
                 });
         };
+
         search();
     };
 
@@ -269,43 +271,49 @@ const Navbar = ({ languageChanged }) => {
                 </Container>
             </Background>
 
-            <Login show={showLogin} clickHandler={clickHandler} />
+            <Suspense fallback={<div>Loading ...</div>}>
+                <Login show={showLogin} clickHandler={clickHandler} />
+            </Suspense>
 
-            <SearchResult show={showResult}>
-                <ResultTitle>
-                    {language === "ja"
-                        ? "検索結果："
-                        : language === "vi"
-                        ? "Kết quả tìm kiếm: "
-                        : "Search Result: "}{" "}
-                    {query}
-                </ResultTitle>
-                <Result onClick={hideSearch}>
-                    {searchResult.length > 0 &&
-                        searchResult.map((post) => (
-                            <SearchResultUnit
-                                post={post}
-                                key={post._id}
-                                to={post.path}
-                            />
-                        ))}
-                </Result>
-                <CloseButton>
-                    <Button onClick={hideSearch}>
+            <Suspense fallback={<div>Loading ...</div>}>
+                <SearchResult show={showResult}>
+                    <ResultTitle>
                         {language === "ja"
-                            ? "閉じる"
-                            : language === "en"
-                            ? "Close"
-                            : "Đóng "}
-                    </Button>
-                </CloseButton>
-            </SearchResult>
+                            ? "検索結果："
+                            : language === "vi"
+                            ? "Kết quả tìm kiếm: "
+                            : "Search Result: "}{" "}
+                        {query}
+                    </ResultTitle>
+                    <Result onClick={hideSearch}>
+                        {searchResult.length > 0 &&
+                            searchResult.map((post) => (
+                                <SearchResultUnit
+                                    post={post}
+                                    key={post._id}
+                                    to={post.path}
+                                />
+                            ))}
+                    </Result>
+                    <CloseButton>
+                        <Button onClick={hideSearch}>
+                            {language === "ja"
+                                ? "閉じる"
+                                : language === "en"
+                                ? "Close"
+                                : "Đóng "}
+                        </Button>
+                    </CloseButton>
+                </SearchResult>
+            </Suspense>
 
-            <Sidebar
-                showSidebar={showSidebar}
-                onClick={onClick}
-                language={language}
-            />
+            <Suspense fallback={<div>Loading ...</div>}>
+                <Sidebar
+                    showSidebar={showSidebar}
+                    onClick={onClick}
+                    language={language}
+                />
+            </Suspense>
         </>
     );
 };

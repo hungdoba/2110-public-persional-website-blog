@@ -19,10 +19,7 @@ const Blog = () => {
             const res = await axios.get("/search/newest");
             setNewestPost(res.data[0]);
         };
-        getArticle();
-    }, []);
 
-    useEffect(() => {
         const getDiaryPost = async () => {
             const res = await axios.get("posts/?category=diary");
             setDiaryPost(res.data);
@@ -38,6 +35,7 @@ const Blog = () => {
             setBookPost(res.data);
         };
 
+        getArticle();
         getBookPost();
         getDiaryPost();
         getProgrammingPost();

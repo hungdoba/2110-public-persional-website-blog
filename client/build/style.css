@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Encode Sans Expanded", sans-serif;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 5000vh;
+    background: #fff;
+}
+
+#to-blog-top{
+    z-index: 95;
+    width: 40px;
+    height: 70px;
+    border-radius: 25px;
+    box-shadow: inset 0 0 0 1px lightblue;
+
+    top: -20%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#to-blog-top:hover{
+    box-shadow: inset 0 0 0 1px lightcoral;
+}
+
+#to-blog-top:hover > #scroll{
+    animation-duration: 0.7s;
+}
+
+#scroll{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin-left: 15px;
+    margin-top: 10px;
+    background: black;
+
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+
+@keyframes scroll{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+#to-blog-bottom{
+    display: none;
+    z-index: 95;
+    position: fixed;
+    margin-left: 77vw;
+    margin-top: 75vh;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: white;
+    font-size: 48px;
+}
+
+@media screen and (max-width: 640px)
+{
+
+    #to-blog-top{
+        z-index: 95;
+        width: 20px;
+        height: 40px;
+        border-radius: 10px;
+        box-shadow: inset 0 0 0 1px lightblue;
+
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 40vh;
+    }
+
+    #scroll{
+        content: '';
+        margin-left: 8px;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        margin-top: 10px;
+        background: black;
+
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-name: scroll;
+    }
+
+    #to-blog-bottom{
+        height: 40px;
+        width: 100px;
+        left: -50px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 65vh;
+        margin-left: 50vw;
+    }
+}
+

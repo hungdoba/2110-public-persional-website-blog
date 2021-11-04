@@ -158,3 +158,13 @@ export const Image = styled.img`
         cursor: pointer;
     }
 `;
+
+export const Website = styled.a`
+    color: white;
+    text-decoration: none;
+    &:hover {
+        border-bottom: 1px solid green;
+        padding-bottom: 10px;
+        cursor: pointer;
+    }
+`;

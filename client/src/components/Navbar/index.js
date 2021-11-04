@@ -16,6 +16,7 @@ import {
     Language,
     Result,
     Image,
+    Website,
 } from "./element";
 
 import EnFlag from "../../images/en.png";
@@ -139,7 +140,7 @@ const Navbar = ({ languageChanged }) => {
         <>
             <Background hide={hide}>
                 <Container>
-                    <MenuNav fixed="true" to="/">
+                    <Website href="/#/blog">
                         <Menu pcShow mobileShow>
                             <Image
                                 alt="home"
@@ -147,7 +148,8 @@ const Navbar = ({ languageChanged }) => {
                                 title="Hung.blog"
                             />
                         </Menu>
-                    </MenuNav>
+                    </Website>
+
                     <MenuNav to="/search?category=programming">
                         <Menu pcShow>
                             {language === "ja" && (

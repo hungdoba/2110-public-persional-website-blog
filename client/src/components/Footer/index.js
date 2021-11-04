@@ -48,7 +48,7 @@ const Footer = ({ language }) => {
                         )}
                     </a>
                 </Title>
-                <Website href="./index.html">Hungba.blog</Website>
+                <Website href="/#/blog">Hungba.blog</Website>
             </Container>
         </Background>
     );

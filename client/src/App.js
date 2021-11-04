@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Route from "react-router-dom/Route";
 import Switch from "react-router-dom/Switch";
 import HashRouter from "react-router-dom/HashRouter";

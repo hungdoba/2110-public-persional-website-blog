@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
 
 export const Background = styled.div`
     background-color: black;
@@ -33,11 +32,52 @@ export const Title = styled.a`
     }
 `;
 
-export const Website = styled(Link)`
+export const Website = styled.a`
     color: white;
     margin-left: 2vw;
     margin-right: auto;
     text-decoration: none;
+    &:hover {
+        border-bottom: 1px solid green;
+        padding-bottom: 10px;
+        cursor: pointer;
+    }
+`;
+
+const heartBeat = keyframes`
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 1.5 );
+  }
+  40%
+  {
+    transform: scale( 1 );
+  }
+  60%
+  {
+    transform: scale( 1.5 );
+  }
+  80%
+  {
+    transform: scale( 1 );
+  }
+  100%
+  {
+    transform: scale( 1 );
+  }
+`;
+
+export const AboutmeImage = styled.img`
+    animation: ${heartBeat} 1s infinite;
+    &:hover {
+        border-bottom: 1px solid green;
+        padding-bottom: 10px;
+        cursor: pointer;
+    }
 `;
 
 export const Image = styled.img`

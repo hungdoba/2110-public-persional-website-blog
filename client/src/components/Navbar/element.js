@@ -2,18 +2,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Background = styled.div`
-    position: -webkit-sticky;
-    position: sticky;
     top: 0;
+    position: sticky;
+    position: -webkit-sticky;
     z-index: 999;
-    height: 64px;
     background-color: black;
     visibility: ${({ hide }) => (hide ? "hidden" : "visible")};
     transition: all 0.3s ease-in-out;
-
-    @media screen and (max-width: 1025px) {
-        height: 100px;
-    }
+    height: 90px;
 
     @media screen and (max-width: 767px) {
         height: 64px;
@@ -157,4 +153,9 @@ export const Image = styled.img`
         padding-bottom: 10px;
         cursor: pointer;
     }
+`;
+
+export const Website = styled.a`
+    color: white;
+    text-decoration: none;
 `;

@@ -23,32 +23,32 @@ const Footer = ({ language }) => {
                 >
                     <Image alt="github" src={GithubIcon} title="Github" />
                 </Title>
-                <Title>
-                    <a href="./welcome.html">
-                        {language === "en" && (
-                            <AboutmeImage
-                                alt="aboutme"
-                                src={AboutMeIcon}
-                                title="About me"
-                            />
-                        )}
-                        {language === "vi" && (
-                            <AboutmeImage
-                                alt="aboutme"
-                                src={AboutMeIcon}
-                                title="Tự giới thiệu"
-                            />
-                        )}
-                        {language === "ja" && (
-                            <AboutmeImage
-                                alt="aboutme"
-                                src={AboutMeIcon}
-                                title="自己紹介"
-                            />
-                        )}
-                    </a>
+
+                <Title href="./welcome.html">
+                    {language === "en" && (
+                        <AboutmeImage
+                            alt="aboutme"
+                            src={AboutMeIcon}
+                            title="About me"
+                        />
+                    )}
+                    {language === "vi" && (
+                        <AboutmeImage
+                            alt="aboutme"
+                            src={AboutMeIcon}
+                            title="Tự giới thiệu"
+                        />
+                    )}
+                    {language === "ja" && (
+                        <AboutmeImage
+                            alt="aboutme"
+                            src={AboutMeIcon}
+                            title="自己紹介"
+                        />
+                    )}
                 </Title>
-                <Website href="./index.html">Hungba.blog</Website>
+
+                <Website href="/#/blog">Hungba.blog</Website>
             </Container>
         </Background>
     );

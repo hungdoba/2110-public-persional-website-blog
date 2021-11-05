@@ -34,7 +34,9 @@ import { Context } from "../../context/Context";
 
 const Sidebar = React.lazy(() => import("../Sidebar"));
 const Login = React.lazy(() => import("../../components/Login"));
-const SearchResultUnit = React.lazy("../../components/SearchResultUnit");
+const SearchResultUnit = React.lazy(() =>
+    import("../../components/SearchResultUnit")
+);
 
 const Navbar = ({ languageChanged }) => {
     const [en, setEn] = useState(true);
@@ -90,6 +92,7 @@ const Navbar = ({ languageChanged }) => {
                 .then((res) => {
                     setSearchResult(res.data);
                     setShowResult(true);
+                    console.log(res.data);
                 });
         };
 

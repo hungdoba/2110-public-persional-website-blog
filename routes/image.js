@@ -37,6 +37,8 @@ router.post("/upload", upload.single("image"), (req, res) => {
                     },
                 });
 
+                console.log(response);
+
                 const fileId = response.data.id;
                 await drive.permissions.create({
                     fileId: fileId,
@@ -52,8 +54,8 @@ router.post("/upload", upload.single("image"), (req, res) => {
                 // });
 
                 res.status(200).json(response.data.id);
-            } catch (error) {
-                res.status(500).json(error.data);
+            } catch (err) {
+                res.status(500).json(err.data);
             }
         }
         uploadFile();

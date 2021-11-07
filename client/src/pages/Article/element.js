@@ -94,6 +94,10 @@ export const ButtonConfirm = styled.button.attrs(() => ({
     type: "submit",
 }))`
     padding: 5px;
+    &:hover {
+        cursor: pointer;
+        background-color: grey;
+    }
 `;
 
 export const ArticleContent = styled.div`

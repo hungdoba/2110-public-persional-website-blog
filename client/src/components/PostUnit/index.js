@@ -11,9 +11,9 @@ import {
 
 import defaultPhoto from "../../images/default.jpg";
 
-const PostUnit = (post, { language }) => {
+const PostUnit = ({ language, post }) => {
     const [photoSrc, setPhotoSrc] = useState(
-        "https://drive.google.com/uc?export=view&id=" + post.post.tinyPhoto
+        "https://drive.google.com/uc?export=view&id=" + post.tinyPhoto
     );
 
     const setDefaultImage = () => {
@@ -21,7 +21,7 @@ const PostUnit = (post, { language }) => {
     };
 
     return (
-        <Container to={`/post/${post.post._id}`}>
+        <Container to={`/post/${post._id}`}>
             <ImageDiv>
                 <Image
                     alt="article-title-photo"
@@ -32,15 +32,15 @@ const PostUnit = (post, { language }) => {
             <TitleDiv>
                 <Title>
                     {language === "ja"
-                        ? post.post.titleJa
+                        ? post.titleJa
                         : language === "vi"
-                        ? post.post.titleVi
-                        : post.post.titleEn}
+                        ? post.titleVi
+                        : post.titleEn}
                 </Title>
             </TitleDiv>
             <ContentDiv>
                 <Content>
-                    {new Date(post.post.updatedAt).toLocaleDateString()}
+                    {new Date(post.updatedAt).toLocaleDateString()}
                 </Content>
             </ContentDiv>
         </Container>

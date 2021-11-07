@@ -16,11 +16,19 @@ const PostCatalog = ({ title, link, posts, language, seemore }) => {
                 ? posts
                       .slice(0, 4)
                       .map((post) => (
-                          <PostUnit language="vi" post={post} key={post._id} />
+                          <PostUnit
+                              language={language}
+                              post={post}
+                              key={post._id}
+                          />
                       ))
                 : posts.length &&
                   posts.map((post) => (
-                      <PostUnit language="vi" post={post} key={post._id} />
+                      <PostUnit
+                          language={language}
+                          post={post}
+                          key={post._id}
+                      />
                   ))}
         </Container>
     );

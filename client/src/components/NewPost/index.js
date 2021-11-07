@@ -10,7 +10,7 @@ import {
 
 const skyPhoto = React.lazy(() => import("../../images/sky.jpg"));
 
-const NewPost = (post, { language }) => {
+const NewPost = ({ language, post }) => {
     const [photoSrc, setPhotoSrc] = useState();
 
     const setDefaultImage = () => {
@@ -18,10 +18,9 @@ const NewPost = (post, { language }) => {
     };
 
     useEffect(() => {
-        if (post && post.post.titleImage) {
+        if (post && post.titleImage) {
             setPhotoSrc(
-                "https://drive.google.com/uc?export=view&id=" +
-                    post.post.titleImage
+                "https://drive.google.com/uc?export=view&id=" + post.titleImage
             );
         }
     }, [post]);
@@ -48,11 +47,11 @@ const NewPost = (post, { language }) => {
             </Title>
             <PostTime>
                 {post
-                    ? new Date(post.post.updatedAt).toLocaleDateString()
+                    ? new Date(post.updatedAt).toLocaleDateString()
                     : "Updating..."}
             </PostTime>
-            {post.post && (
-                <NavPost to={`/post/${post.post._id}`}>
+            {post && (
+                <NavPost to={`/post/${post._id}`}>
                     {language === "ja"
                         ? "もっと見る"
                         : language === "vi"

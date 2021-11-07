@@ -72,7 +72,12 @@ const Search = () => {
     return (
         <Container>
             <Navbar languageChanged={setLanguage} />
-            <PostCatalog title={title} posts={posts} link="post" />
+            <PostCatalog
+                language={language}
+                title={title}
+                posts={posts}
+                link="post"
+            />
             <Footer language={language} />
         </Container>
     );

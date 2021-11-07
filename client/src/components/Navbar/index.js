@@ -297,6 +297,7 @@ const Navbar = ({ languageChanged }) => {
                                     post={post}
                                     key={post._id}
                                     to={post.path}
+                                    language={language}
                                 />
                             ))}
                     </Result>

@@ -5,7 +5,7 @@ import {
     Img,
     Content,
     ContentTitle,
-    ContentContent,
+    ContentTime,
 } from "./element";
 
 import islandIcon from "../../images/island.png";
@@ -38,9 +38,9 @@ const SearchResultUnit = (post, language) => {
                         ? post.post.titleVi
                         : post.post.titleEn}
                 </ContentTitle>
-                <ContentContent>
+                <ContentTime>
                     {new Date(post.post.updatedAt).toLocaleDateString()}
-                </ContentContent>
+                </ContentTime>
             </Content>
         </Container>
     );

@@ -48,7 +48,7 @@ const NewPost = (post, { language }) => {
             </Title>
             <PostTime>
                 {post
-                    ? new Date(post.updatedAt).toLocaleDateString()
+                    ? new Date(post.post.updatedAt).toLocaleDateString()
                     : "Updating..."}
             </PostTime>
             {post.post && (

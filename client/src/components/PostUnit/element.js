@@ -14,7 +14,7 @@ export const Container = styled(Link)`
     margin-right: 0.5%;
 
     @media screen and (max-width: 767px) {
-        width: 49%;
+        width: 48%;
     }
 `;
 

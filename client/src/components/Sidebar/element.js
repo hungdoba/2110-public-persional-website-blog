@@ -55,7 +55,9 @@ export const SearchBar = styled.div`
     justify-content: flex-end;
 `;
 
-export const Result = styled.div``;
+export const Result = styled.div`
+    width: 99%;
+`;
 
 export const SearchResult = styled.div`
     width: 100%;
@@ -103,8 +105,8 @@ export const Submit = styled.button.attrs(() => ({
 export const ResultTitle = styled.div`
     font-size: 18px;
     color: lightgreen;
-    padding: 10px;
-    width: 100%;
+    padding: 2%;
+    width: 95%;
     border-bottom: 1px solid lightcoral;
 `;
 

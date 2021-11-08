@@ -34,27 +34,27 @@ export const Image = styled.div`
 export const Img = styled.img`
     height: 100%;
     object-fit: cover;
-    @media screen and (max-width: 1007px) {
-    }
 `;
 
 export const Content = styled.div`
     flex: 1;
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
     padding-left: 15px;
-    @media screen and (max-width: 1007px) {
-    }
+    margin: 10px 5px;
+    overflow: hidden;
 `;
 
-export const ContentTitle = styled.h3`
-    width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+export const ContentTitle = styled.div`
     color: darkgreen;
-    @media screen and (max-width: 1007px) {
-        color: white;
-    }
+    font-weight: bold;
+    font-size: 20px;
+`;
+
+export const ContentTime = styled.div`
+    color: darkgreen;
 `;
 
 export const ContentContent = styled.p`

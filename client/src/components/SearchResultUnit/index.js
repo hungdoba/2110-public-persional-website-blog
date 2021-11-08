@@ -5,14 +5,14 @@ import {
     Img,
     Content,
     ContentTitle,
-    ContentContent,
+    ContentTime,
 } from "./element";
 
 import islandIcon from "../../images/island.png";
 
-const SearchResultUnit = (post, language) => {
+const SearchResultUnit = ({ post, language }) => {
     const [photoSrc, setPhotoSrc] = useState(
-        "https://drive.google.com/uc?export=view&id=" + post.post.tinyPhoto
+        "https://drive.google.com/uc?export=view&id=" + post.tinyPhoto
     );
 
     const setDefaultImage = () => {
@@ -20,9 +20,9 @@ const SearchResultUnit = (post, language) => {
     };
 
     return (
-        <Container to={`/post/${post.post._id}`}>
+        <Container to={`/post/${post._id}`}>
             <Image>
-                {post.post.tinyPhoto && (
+                {post.tinyPhoto && (
                     <Img
                         alt="article-title-photo"
                         onError={setDefaultImage}
@@ -33,14 +33,14 @@ const SearchResultUnit = (post, language) => {
             <Content>
                 <ContentTitle>
                     {language === "ja"
-                        ? post.post.titleJa
+                        ? post.titleJa
                         : language === "vi"
-                        ? post.post.titleVi
-                        : post.post.titleEn}
+                        ? post.titleVi
+                        : post.titleEn}
                 </ContentTitle>
-                <ContentContent>
-                    {new Date(post.post.updatedAt).toLocaleDateString()}
-                </ContentContent>
+                <ContentTime>
+                    {new Date(post.updatedAt).toLocaleDateString()}
+                </ContentTime>
             </Content>
         </Container>
     );

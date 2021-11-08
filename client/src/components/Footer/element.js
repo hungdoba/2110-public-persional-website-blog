@@ -47,27 +47,27 @@ export const Website = styled.a`
 const heartBeat = keyframes`
   0%
   {
-    transform: scale( 1 );
+    transform: scale( 0.7 );
   }
   20%
   {
-    transform: scale( 1.5 );
+    transform: scale( 1 );
   }
   40%
   {
-    transform: scale( 1 );
+    transform: scale( 0.7 );
   }
   60%
   {
-    transform: scale( 1.5 );
+    transform: scale( 1 );
   }
   80%
   {
-    transform: scale( 1 );
+    transform: scale( 0.7 );
   }
   100%
   {
-    transform: scale( 1 );
+    transform: scale( 0.7 );
   }
 `;
 

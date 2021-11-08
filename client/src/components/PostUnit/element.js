@@ -10,8 +10,7 @@ export const Container = styled(Link)`
     overflow: hidden;
     border-bottom-right-radius: 2%;
     border-color: #fff #e5e8e8 #e5e8e8 #fff;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    margin-left: 1%;
 
     @media screen and (max-width: 767px) {
         width: 48%;

@@ -23,12 +23,6 @@ export const Image = styled.div`
     margin: 15px;
     border: none;
     overflow: hidden;
-
-    @media screen and (max-width: 1007px) {
-        margin: 3vw;
-        width: 20vw;
-        height: 20vw;
-    }
 `;
 
 export const Img = styled.img`

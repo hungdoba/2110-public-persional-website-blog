@@ -40,7 +40,7 @@ const Editor = ({ value, executeCode, dispatch, language }) => {
     };
 
     return (
-        <div className="editor-container">
+        <div className="container">
             <div className="editor-title">
                 <div className="editor-language">HTML</div>
                 <div className="editor-import-file">
@@ -59,18 +59,20 @@ const Editor = ({ value, executeCode, dispatch, language }) => {
                     Run
                 </button>
             </div>
-            <Controlled
-                onBeforeChange={handleChange}
-                value={value}
-                className="code-mirror-wrapper"
-                options={{
-                    lineWrapping: true,
-                    lint: true,
-                    mode: "xml",
-                    lineNumbers: true,
-                    theme: "material",
-                }}
-            />
+            <div className="editor-container">
+                <Controlled
+                    onBeforeChange={handleChange}
+                    value={value}
+                    className="code-mirror-wrapper"
+                    options={{
+                        lineWrapping: true,
+                        lint: true,
+                        mode: "xml",
+                        lineNumbers: true,
+                        theme: "material",
+                    }}
+                />
+            </div>
         </div>
     );
 };

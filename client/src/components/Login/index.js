@@ -42,7 +42,11 @@ const Login = ({ show, clickHandler }) => {
                 <Label>Username</Label>
                 <Input ref={userRef} placeholder="Enter Username" />
                 <Label>Password</Label>
-                <Input ref={passwordRef} placeholder="Enter Password" />
+                <Input
+                    ref={passwordRef}
+                    type="password"
+                    placeholder="Enter Password"
+                />
                 <ErrorLogin show={showError}>
                     Login Error. This function is still developing. It will
                     comeback soon!

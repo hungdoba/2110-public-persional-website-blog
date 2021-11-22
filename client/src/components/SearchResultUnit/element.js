@@ -7,9 +7,9 @@ export const Container = styled(Link)`
     max-height: 100px;
     margin-top: 10px;
     border: 1px solid;
-    border-color: #e5e8e8 #e5e8e8 #e5e8e8 #e5e8e8;
     border-radius: 3px;
     text-decoration: none;
+    border-color: #d6dbdf;
 
     @media screen and (max-width: 1007px) {
         width: 100%;

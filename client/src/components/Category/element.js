@@ -10,14 +10,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @media screen and (max-width: 640px) {
-    }
 `;
 
 export const Title = styled.h3`
     color: black;
-    @media screen and (max-width: 640px) {
-    }
 `;
 
 export const NavCategory = styled(Link)`
@@ -25,6 +21,4 @@ export const NavCategory = styled(Link)`
     font-weight: normal;
     text-decoration: none;
     color: #7d3c98;
-    @media screen and (max-width: 640px) {
-    }
 `;

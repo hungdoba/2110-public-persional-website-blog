@@ -115,12 +115,37 @@ export const ImportArea = styled.div`
     margin: 0vw 0.5vw 1vw 1vw;
 `;
 
-export const RenderArea = styled.iframe`
+export const RenderArea = styled.div`
     width: 48.5vw;
-    height: 93.5vh;
+    height: 81.5vh;
     margin: 0vw 1vw 1vw 0.5vw;
     background-color: white;
     border-radius: 8px;
+    overflow: scroll;
+    padding: 30px;
+
+    line-height: 1.5rem;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        margin-left: 40px;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    img {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 `;
 
 export const Popup = styled.div`

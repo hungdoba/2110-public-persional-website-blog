@@ -303,12 +303,15 @@ const Article = () => {
                         }}
                     />
                 </ImportArea>
-                <RenderArea
-                    srcDoc={srcDoc}
-                    title="output"
-                    sandbox="allow-scripts"
-                    frameBorder="0"
-                />
+                <RenderArea>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                                ${srcDoc}
+                            `,
+                        }}
+                    />
+                </RenderArea>
             </ArticleContent>
             <Popup show={showPopup} onClick={() => setShowPopup(false)}>
                 {tinyPhoto && (

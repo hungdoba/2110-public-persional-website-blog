@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
@@ -15,10 +16,11 @@ import {
     Image,
     Img,
     ModifyButton,
-    Paragraph,
     PostList,
     Title,
     TitleText,
+    RenderArea,
+    Suggest,
 } from "./element";
 
 import skyPhoto from "../../images/sky.jpg";
@@ -114,6 +116,7 @@ const Post = () => {
     return (
         <>
             <Navbar languageChanged={setLanguage} />
+
             <Container>
                 <Title>
                     <DeleteButton onClick={DeletePost} show={showDeleteBtn}>
@@ -138,87 +141,90 @@ const Post = () => {
                             onError={setDefaultImage}
                         />
                     </Image>
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                    ${
-                        language === "en"
-                            ? article.contentEn
-                            : language === "vi"
-                            ? article.contentVi
-                            : article.contentJa
-                    }
+                    <RenderArea>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: `
+                                ${
+                                    language === "en"
+                                        ? article.contentEn
+                                        : language === "vi"
+                                        ? article.contentVi
+                                        : article.contentJa
+                                }
                             `,
-                        }}
-                    />
-                    <Paragraph></Paragraph>
+                            }}
+                        />
+                    </RenderArea>
                 </Content>
-                <PostList>
-                    <Category
-                        title={
-                            language === "ja"
-                                ? "日記"
-                                : language === "vi"
-                                ? "Nhật ký"
-                                : "Diary"
-                        }
-                        link="/temp"
-                    />
-                    {diaryPosts.length &&
-                        diaryPosts
-                            .slice(0, 2)
-                            .map((post) => (
-                                <SearchResultUnit
-                                    language={language}
-                                    post={post}
-                                    key={post._id}
-                                />
-                            ))}
-                </PostList>
-                <PostList>
-                    <Category
-                        title={
-                            language === "ja"
-                                ? "本"
-                                : language === "vi"
-                                ? "Sách"
-                                : "Book"
-                        }
-                        link="/temp"
-                    />
-                    {bookPosts.length &&
-                        bookPosts
-                            .slice(0, 2)
-                            .map((post) => (
-                                <SearchResultUnit
-                                    language={language}
-                                    post={post}
-                                    key={post._id}
-                                />
-                            ))}
-                </PostList>
-                <PostList>
-                    <Category
-                        title={
-                            language === "ja"
-                                ? "プログラミング"
-                                : language === "vi"
-                                ? "Lập trình"
-                                : "Programming"
-                        }
-                        link="/temp"
-                    />
-                    {programmingPosts.length &&
-                        programmingPosts
-                            .slice(0, 2)
-                            .map((post) => (
-                                <SearchResultUnit
-                                    language={language}
-                                    post={post}
-                                    key={post._id}
-                                />
-                            ))}
-                </PostList>
+                <Suggest>
+                    <PostList>
+                        <Category
+                            title={
+                                language === "ja"
+                                    ? "日記"
+                                    : language === "vi"
+                                    ? "Nhật ký"
+                                    : "Diary"
+                            }
+                            link="/temp"
+                        />
+                        {diaryPosts.length &&
+                            diaryPosts
+                                .slice(0, 2)
+                                .map((post) => (
+                                    <SearchResultUnit
+                                        language={language}
+                                        post={post}
+                                        key={post._id}
+                                    />
+                                ))}
+                    </PostList>
+                    <PostList>
+                        <Category
+                            title={
+                                language === "ja"
+                                    ? "本"
+                                    : language === "vi"
+                                    ? "Sách"
+                                    : "Book"
+                            }
+                            link="/temp"
+                        />
+                        {bookPosts.length &&
+                            bookPosts
+                                .slice(0, 2)
+                                .map((post) => (
+                                    <SearchResultUnit
+                                        language={language}
+                                        post={post}
+                                        key={post._id}
+                                    />
+                                ))}
+                    </PostList>
+                    <PostList>
+                        <Category
+                            title={
+                                language === "ja"
+                                    ? "プログラミング"
+                                    : language === "vi"
+                                    ? "Lập trình"
+                                    : "Programming"
+                            }
+                            link="/temp"
+                        />
+                        {programmingPosts.length &&
+                            programmingPosts
+                                .slice(0, 2)
+                                .map((post) => (
+                                    <SearchResultUnit
+                                        language={language}
+                                        post={post}
+                                        key={post._id}
+                                    />
+                                ))}
+                    </PostList>
+                </Suggest>
             </Container>
             <Footer language={language} />
         </>
